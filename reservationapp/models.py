@@ -4,6 +4,8 @@ from django.contrib import admin
 
 from schedule.models import Occurrence
 
+from __future__ import unicode_literals
+
 class SeatReservations(models.Model):
     occurrence = models.OneToOneField(Occurrence)
     reservation_limit = models.IntegerField(default=10) 
@@ -33,3 +35,14 @@ class SeatReservations(models.Model):
 
         return True
 
+class classA(models.Model):
+    passengerA = models.CharField(max_length=120)
+
+    def __unicode__(self):
+        self.passengerA
+
+class classB(models.Model):
+    passengerB = models.CharField(max_length=120)
+
+    def __unicode__(self):
+        self.passengerB
